@@ -1,0 +1,317 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>HTML标签上 | Hexo</title><script>var config = </script><script class="pjax-js">code.findCode();</script><script>window.onload = ()=>{var pjax = new Pjax({selectors:['title','article','#aside-block','.pjax-js']});};</script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.0.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><h1>HTML标签上</h1><div id="post-info"><span>First Post:<div style="display:inline-block;width:90px"><time datetime="2020-11-07T09:37:35.000Z" id="date"> 2020-11-07</time></div></span><br><span>Last Update:<div style="display:inline-block;width:90px"><time datetime="2020-11-07T09:45:26.023Z" id="updated"> 2020-11-07</time></div></span></div></div><hr><div id="post-content"><h1 id="1-HTML语法规范"><a href="#1-HTML语法规范" class="headerlink" title="1.HTML语法规范"></a>1.HTML语法规范</h1><h3 id="1-1-基本语法规范"><a href="#1-1-基本语法规范" class="headerlink" title="1.1 基本语法规范"></a>1.1 基本语法规范</h3><ol>
+<li>HTML的标签是由尖括号包围的关键词。</li>
+<li>HTML标签通常是成对出现的，被称为双标签。</li>
+<li>有些特殊标签必须是单个标签，被称为单标签。</li>
+</ol>
+<h3 id="1-2-标签关系"><a href="#1-2-标签关系" class="headerlink" title="1.2 标签关系"></a>1.2 标签关系</h3><p>双标签关系可以分为两类：包含关系和并列关系。</p>
+<p><strong>包含关系：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>并列关系：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="2-HTML基本结构标签"><a href="#2-HTML基本结构标签" class="headerlink" title="2.HTML基本结构标签"></a>2.HTML基本结构标签</h1><h3 id="2-1-第一个HTML网页"><a href="#2-1-第一个HTML网页" class="headerlink" title="2.1 第一个HTML网页"></a>2.1 第一个HTML网页</h3><p>每个网页都有一个基本的结构标签（也称为骨架标签），页面内容也是在这些基本标签上书写。</p>
+<p>HTML页面也成为HTML文档。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>我的第一个页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        写到这里，我才发现我写完了QWQ。</span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>标签名</th>
+<th>定义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&lt;html&gt;&lt;&#x2F;html&gt;</td>
+<td>HTML标签</td>
+<td>页面中最大的标签，我们称为<strong>根标签</strong></td>
+</tr>
+<tr>
+<td>&lt;head&gt;&amp;&lt;&#x2F;head&gt;</td>
+<td>文档的头部</td>
+<td>注意head标签中我们必须要设置的标签是title</td>
+</tr>
+<tr>
+<td>&lt;title&gt;&lt;title&gt;</td>
+<td>文档的标题</td>
+<td>让页面拥有属于自己的网页标题</td>
+</tr>
+<tr>
+<td>&lt;body&gt;&lt;&#x2F;body&gt;</td>
+<td>文档的主体</td>
+<td>元素包含文档的所有内容，页面内容基本都是放在body里面的</td>
+</tr>
+</tbody></table>
+<h1 id="3-开发工具"><a href="#3-开发工具" class="headerlink" title="3.开发工具"></a>3.开发工具</h1><h3 id="3-1-VSCode的使用"><a href="#3-1-VSCode的使用" class="headerlink" title="3.1 VSCode的使用"></a>3.1 VSCode的使用</h3><ol>
+<li>双击打开软件</li>
+<li>新建文件快捷键:Ctrl+N</li>
+<li>保存为HTML文档</li>
+<li>Ctrl+加号键位放大</li>
+<li>!+TAB快速搭建骨架</li>
+</ol>
+<h3 id="3-2VSCode插件安装"><a href="#3-2VSCode插件安装" class="headerlink" title="3.2VSCode插件安装"></a>3.2VSCode插件安装</h3><ol>
+<li>Open in Browser——右键浏览器打开html文件</li>
+<li>Auto Rename Tag——自动重命名配对的HTML标签</li>
+<li>CSS Peek——追踪至样式</li>
+</ol>
+<h3 id="3-3-VSCode生成骨架标签代码"><a href="#3-3-VSCode生成骨架标签代码" class="headerlink" title="3.3 VSCode生成骨架标签代码"></a>3.3 VSCode生成骨架标签代码</h3><h4 id="3-3-1文档类型声明标签"><a href="#3-3-1文档类型声明标签" class="headerlink" title="3.3.1文档类型声明标签"></a>3.3.1文档类型声明标签</h4><p>&lt;!DOCTYPE&gt;文档类型说明，作用是告诉浏览器用那种HTML版本来显示网页，必须写到第一行，不是HTML标签，只是声明标签。</p>
+<p><strong>这句代码的意识是：当前页面采取的是HTML5版本来显示网页的</strong></p>
+<h4 id="3-3-2-lang语言种类"><a href="#3-3-2-lang语言种类" class="headerlink" title="3.3.2 lang语言种类"></a>3.3.2 lang语言种类</h4><p>用来定义当前文档显示的语言。</p>
+<ol>
+<li>en定于语言为英语</li>
+<li>zh-CN定义语言为中文</li>
+</ol>
+<p>简单来说就是说明该网页是英文网页还是中文网页，定义为英文等会出发谷歌浏览器的翻译功能。</p>
+<p>这个属性对浏览器和搜索引擎还是有一定作用的。</p>
+<h4 id="3-3-3-字符集"><a href="#3-3-3-字符集" class="headerlink" title="3.3.3 字符集"></a>3.3.3 字符集</h4><p>字符集（Character Set）是多个字符的集合以便于计算机能够识别和存储各种文字。</p>
+<p>在&lt;head&gt;标签内，可以通过&lt;meta&gt;标签的charset属性来规定HTML文档应该使用哪种字符编码。</p>
+<p>charset常用的值有：GB2312、BIG5、GBK和UTF-8，其中UTF-8被称为万国码，基本包含了全世界所有国家需要用到的字符。</p>
+<p>建议提倡使用UTF-8字符编码。</p>
+<h4 id="3-3-4-总结"><a href="#3-3-4-总结" class="headerlink" title="3.3.4 总结"></a>3.3.4 总结</h4><ol>
+<li>以上代码都是VSCode自动生成的，基本不需要我们重写。</li>
+<li>&lt;!DOCTYPE&gt;文档类型说明标签，告诉浏览器采取HTML5版本来显示页面。</li>
+<li>&lt;html lang&#x3D;“en”&gt;告诉浏览器或搜索引擎这是一个英文网站，本页面采取英文来显示。</li>
+<li>&lt;meta charset&#x3D;”UTF-8”&gt;必须写的标签，采取UTF-8来保存文字，不写会显示乱码。</li>
+</ol>
+<h1 id="4-HTML常用标签"><a href="#4-HTML常用标签" class="headerlink" title="4. HTML常用标签"></a>4. HTML常用标签</h1><h3 id="4-1-标签语义"><a href="#4-1-标签语义" class="headerlink" title="4.1 标签语义"></a>4.1 标签语义</h3><p>标签语义就是就是标签的含义，即每个标签是用来干嘛的。</p>
+<p><strong>根据标签的语义，在合适的地方给一个最为合适的标签，可以让页面结构更加清晰。</strong></p>
+<h3 id="4-2-标题标签（重要）"><a href="#4-2-标题标签（重要）" class="headerlink" title="4.2 标题标签（重要）"></a>4.2 标题标签（重要）</h3><p>为了使网页具有语义化，通常会用到标题标签。HTML提供了6个等级的网页标签，即&lt;h1&gt;——&lt;h6&gt;。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是一个一级标题，快乐吗？<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>单词head的缩写，意为头部、标题。</p>
+<p>标签语义：作为标题使用，并且依据重要性递减。</p>
+<p><strong>特点:</strong></p>
+<ol>
+<li>加了标题的文字会变得加粗，字号也会依次变大。</li>
+<li>一个标题独占一行。</li>
+</ol>
+<h3 id="4-3-段落标签和换行标签（重要）"><a href="#4-3-段落标签和换行标签（重要）" class="headerlink" title="4.3 段落标签和换行标签（重要）"></a>4.3 段落标签和换行标签（重要）</h3><p>在网页中，想要把页面有条理的显示出来，就需要将这些文字分段显示。在HTML标签中，&lt;p&gt;标签用于定义段落，它可以将整个网页分为若干个段落。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    该段文字是段落标签，你干什么？？？？你别过来打我啊！！</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>单词paragraph的缩写，意为段落。</p>
+<p><strong>标签语义：</strong>可以把HTML文档分割成若干段落。</p>
+<p><strong>特点：</strong></p>
+<ol>
+<li>文本在一个段落中会根据浏览器窗口大小自动换行。</li>
+<li>段落和段落之间保佑空隙。</li>
+</ol>
+<p>在HTML中，文字一般是到达服务器右端然后才自动换行。如果希望强制换行显示，需要使用换行标签&lt;br &#x2F;&gt;。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>单词break的缩写，意为打断、换行。</p>
+<p><strong>标签语义：</strong>强制换行</p>
+<p><strong>特点：</strong></p>
+<ol>
+<li>&lt;br &#x2F;&gt;是一个单标签。</li>
+<li>&lt;br &#x2F;&gt;标签只是简单的开始新的一行，跟段落标签不一样，段落之间会插入一些垂直的间距。</li>
+</ol>
+<h3 id="4-4-文本格式化标签"><a href="#4-4-文本格式化标签" class="headerlink" title="4.4 文本格式化标签"></a>4.4 文本格式化标签</h3><p>在网页中需要为文职设置出题，斜体或下划线等效果，这是需要用到HTML中的格式化标签，使得文字以特殊的方式显示。</p>
+<p>标签语义：突出显示，比普通文字更重要。</p>
+<table>
+<thead>
+<tr>
+<th>语义</th>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>加粗</td>
+<td>&lt;strong&gt;&lt;&#x2F;strong&gt;或者&lt;b&gt;&lt;&#x2F;b&gt;</td>
+<td>更推荐使用&lt;strong&gt; 语义更强烈</td>
+</tr>
+<tr>
+<td>倾斜</td>
+<td>&lt;em&gt;&lt;&#x2F;em&gt;或者&lt;i&gt;&lt;&#x2F;i&gt;</td>
+<td>更推荐使用&lt;em&gt; 语义更强烈</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>&lt;del&gt;&lt;&#x2F;del&gt;或者&lt;s&gt;&lt;&#x2F;s&gt;</td>
+<td>更推荐使用&lt;del&gt; 语义更强烈</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>&lt;ins&gt;&lt;&#x2F;ins&gt;或者&lt;u&gt;&lt;&#x2F;u&gt;</td>
+<td>更推荐使用&lt;ins&gt; 语义更强烈</td>
+</tr>
+</tbody></table>
+<p>先重点记住加粗和倾斜的标签。</p>
+<h3 id="4-5-div和span标签"><a href="#4-5-div和span标签" class="headerlink" title="4.5 div和span标签"></a>4.5 div和span标签</h3><p>&lt;div&gt;和&lt;span&gt;标签是没有语义的，它们就是一个盒子，用来装内容的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span>这是头部<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>今日价格<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>div是division的缩写，表示分割、分区。span意为跨度、跨距。</p>
+<p><strong>特点：</strong></p>
+<ol>
+<li>&lt;div&gt;标签用来布局，但是现在一行只能放一个&lt;div&gt;。大盒子</li>
+<li>&lt;span&gt;标签用来布局，一行上可以有多个span。小盒子</li>
+</ol>
+<h3 id="4-6-图像标签和路径（重点）"><a href="#4-6-图像标签和路径（重点）" class="headerlink" title="4.6 图像标签和路径（重点）"></a>4.6 图像标签和路径（重点）</h3><h4 id="4-6-1-图像标签"><a href="#4-6-1-图像标签" class="headerlink" title="4.6.1 图像标签"></a>4.6.1 图像标签</h4><ol>
+<li><p>在HTML中，&lt;img&gt;标签用于定义HTML页面中的图像。</p>
+</li>
+<li> <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;图像URL&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>单词image的缩写，意为图像。</p>
+</li>
+<li><p>src是&lt;img&gt;标签的必须属性，它用于指定图像文件的路径和文件名。</p>
+</li>
+<li><p>所谓属性：就是属于这个图像标签的特性。</p>
+</li>
+<li><p>图像标签的其他属性：</p>
+</li>
+</ol>
+<ul>
+<li><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>src</td>
+<td>图像路径</td>
+<td>必须属性</td>
+</tr>
+<tr>
+<td>alt</td>
+<td>文本</td>
+<td>替换文本，图像不能显示的文字</td>
+</tr>
+<tr>
+<td>title</td>
+<td>文本</td>
+<td>提示文本，鼠标放在图像上的描述文字</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素</td>
+<td>设置图像的宽度</td>
+</tr>
+<tr>
+<td>height</td>
+<td>像素</td>
+<td>设置图像的高度</td>
+</tr>
+<tr>
+<td>border</td>
+<td>像素</td>
+<td>设置图像的边框粗细</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<ol start="7">
+<li>图像标签的注意点：</li>
+</ol>
+<ul>
+<li>图像标签可以拥有多个属性，必须写在标签名的后面。</li>
+<li>属性之间不分前后顺序，标签名与属性、属性与属性之间均以空格分开。</li>
+<li>属性采用键值对的形式出现，即key&#x3D;”value”的格式，属性&#x3D;”属性值”。</li>
+</ul>
+<h4 id="4-6-2路径（前期铺垫知识）"><a href="#4-6-2路径（前期铺垫知识）" class="headerlink" title="4.6.2路径（前期铺垫知识）"></a>4.6.2路径（前期铺垫知识）</h4><ol>
+<li>目录文件夹和根目录<ul>
+<li>实际开发中，文件不能随便乱放，否则很难快速找到。需要统的文件夹来管理他们。</li>
+<li>目录文件夹：就是普通文件夹，里面不过是存放了我们做页面所需要的相关素材，比如html文件、图片等。</li>
+<li>打开目录文件夹的第一层就是根目录。</li>
+</ul>
+</li>
+<li>VSCode打开目录文件夹<ul>
+<li>直接拖动文件夹</li>
+<li>新建&#x3D;&#x3D;&gt;打开文件夹</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-6-3路径"><a href="#4-6-3路径" class="headerlink" title="4.6.3路径"></a>4.6.3路径</h4><ol>
+<li><p>相对路径</p>
+<ul>
+<li><p>以引用文件作为产骄傲基础而建立出目录路径</p>
+</li>
+<li><p>或者说图片相对于HTML页面的位置</p>
+</li>
+<li><table>
+<thead>
+<tr>
+<th>相对路径分类</th>
+<th>符号</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>同一级路径</td>
+<td></td>
+<td>图像文件位于HTML文件的同一级 如&lt;img src&#x3D;”baidu.jpg” &#x2F;&gt;</td>
+</tr>
+<tr>
+<td>下一级路径</td>
+<td>&#x2F;</td>
+<td>图像文件位于HTML文件的下一级 如&lt;img src&#x3D;”&#x2F;baidu.jpg” &#x2F;&amp;g</td>
+</tr>
+<tr>
+<td>上一级路径</td>
+<td>..&#x2F;</td>
+<td>图像文件位于HTML文件的上一级 如&lt;img src&#x3D;”..&#x2F;baidu.jpg” &#x2F;&amp;g</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+</li>
+<li><p>绝对路径</p>
+<ul>
+<li>是指目录下的绝对位置，通常是从盘符开始的路径。</li>
+</ul>
+</li>
+</ol>
+<h3 id="4-7超链接表标签（重点）"><a href="#4-7超链接表标签（重点）" class="headerlink" title="4.7超链接表标签（重点）"></a>4.7超链接表标签（重点）</h3><p>在HTML标签中，&lt;a&gt;标签用于定义超链接，作用是从一个页面链接到另一个页面。</p>
+<h4 id="4-7-1-链接的语法格式"><a href="#4-7-1-链接的语法格式" class="headerlink" title="4.7.1 链接的语法格式"></a>4.7.1 链接的语法格式</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;跳转目标&quot;</span> <span class="attr">target</span>=<span class="string">&quot;目标窗口的弹出方式&quot;</span>&gt;</span>文本或图像<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>单词anchor的缩写，意为：锚。</p>
+<p>两个属性的作用如下：</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>href</td>
+<td>用于指定链接目标的URL地址（必须属性），当为标签应用href属性时，它就具有了超链接的功能</td>
+</tr>
+<tr>
+<td>target</td>
+<td>用于指定链接页面的打开方式，其中seif为默认值，blank为在新窗口中打开方式。</td>
+</tr>
+</tbody></table>
+<h4 id="4-7-2链接的分类"><a href="#4-7-2链接的分类" class="headerlink" title="4.7.2链接的分类"></a>4.7.2链接的分类</h4><ol>
+<li>外部链接，例如&lt;a href&#x3D;”<a target="_blank" rel="noopener" href="http://www.baidu.com&quot;&gt;百度&lt;/a&gt;%E3%80%82">http://www.baidu.com&quot;&gt;百度&lt;/a&gt;。</a></li>
+<li>内部链接：网站内部页面之间的相互链接，直接链接内部页面名称即可，例如&lt;a href&#x3D;”index.html”&gt;百度&lt;&#x2F;a&gt;。</li>
+<li>空链接：如果当时没有确定链接目标时，&lt;a href&#x3D;”#”&gt;空链接&lt;&#x2F;a&gt;。</li>
+<li>下载链接：如果href里面地址是一个文件或者压缩包，会下载这个文件。</li>
+<li>网页元素链接：网页中的各种网页元素，如文本、图像、表格、音频、视频等多可以添加超链接。</li>
+<li>描点链接：点击某个链接，可以快速定位到页面中的某个位置。<ul>
+<li>在链接文本的href属性中，设置属性值为**#名字**的形式，如&lt;a href&#x3D;”#two”&gt;第二集&lt;&#x2F;a&gt;。</li>
+<li>找到目标位置标签，里面添加一个<strong>id属性&#x3D;刚才的名字</strong>，如&lt;h3 id&#x3D;”two”&gt;第二集介绍&lt;&#x2F;h3&gt;。</li>
+</ul>
+</li>
+</ol>
+<h1 id="5-HTML中的注释和特殊字符"><a href="#5-HTML中的注释和特殊字符" class="headerlink" title="5.HTML中的注释和特殊字符"></a>5.HTML中的注释和特殊字符</h1><h3 id="5-1-注释标签"><a href="#5-1-注释标签" class="headerlink" title="5.1 注释标签"></a>5.1 注释标签</h3><p>网页中添加一些便于阅读理解的解释性语句担忧不需要显示在页面中的注释文字，就需要用到注释标签。</p>
+<p>HTML中的注释以“&lt;!–”开头，以“–&gt;”结束。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 注释语句 --&gt;</span>		快捷键：ctrl+/</span><br></pre></td></tr></table></figure>
+
+<p>简而言之，注释语句是给开发人员看的，这些注释代码不执行也不显示在页面中。</p>
+<p>添加注释是为了更好的解释代码的功能，便于线管人员理解和阅读代码，程序是不会执行注释内容的。</p>
+<h3 id="5-2-特殊字符"><a href="#5-2-特殊字符" class="headerlink" title="5.2 特殊字符"></a>5.2 特殊字符</h3><p>在HTML页面中，一些特殊的符号很难或者不方便直接使用，此时我们就可以使用下面的字符来替代。</p>
+<p><img src="C:\Users\LingYun\AppData\Roaming\Typora\typora-user-images\image-20200907165521595.png" alt="image-20200907165521595"></p>
+<p>在这里只需要记住：空格、大于号、小于号 这三个即可，其余的使用很少，如有需要查阅即可。</p>
+<div id="paginator"></div></div><div id="post-footer"><div id="pages"><div id="footer-link" style="right: calc(50% - 1px);order: 1;border-right: 1px solid #fe2;padding-left: unset;max-width: calc(50% - 4px);"><a href="/2020/11/07/HTML%E5%AF%BC%E8%AF%BB/">← Next HTML导读</a></div><div id="footer-link" style="left: 50%;order: 0;border-left: 1px solid #fe2;padding-right: unset;max-width: calc(50% - 5px);"><a href="/2020/11/07/HTML%E6%A0%87%E7%AD%BE%E4%B8%8B/">HTML标签下 Prev →</a></div></div></div><details id="reward"><summary>打赏</summary><div id="alipay"><span>支付宝 | Alipay</span><br><img src="/img/Alipay.png"></div><div id="wechat"><span>微信 | WeChat</span><br><img src="/img/WeChat.png"></div></details></div><div id="bottom-btn"><a id="to-top" onClick="index.scrolltop();" title="to top">∧</a></div></article><div class="aside-box"><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">John Doe</a></h1><div id="description"><p></p></div></div><div id="aside-block"><h1>INDEX</h1><div id="toc-div"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-HTML%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="toc-number">1.</span> <span class="toc-text">1.HTML语法规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E8%A7%84%E8%8C%83"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.1 基本语法规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E6%A0%87%E7%AD%BE%E5%85%B3%E7%B3%BB"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.2 标签关系</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-HTML%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84%E6%A0%87%E7%AD%BE"><span class="toc-number">2.</span> <span class="toc-text">2.HTML基本结构标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E7%AC%AC%E4%B8%80%E4%B8%AAHTML%E7%BD%91%E9%A1%B5"><span class="toc-number">2.0.1.</span> <span class="toc-text">2.1 第一个HTML网页</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">3.开发工具</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-VSCode%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.0.1.</span> <span class="toc-text">3.1 VSCode的使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2VSCode%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85"><span class="toc-number">3.0.2.</span> <span class="toc-text">3.2VSCode插件安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-VSCode%E7%94%9F%E6%88%90%E9%AA%A8%E6%9E%B6%E6%A0%87%E7%AD%BE%E4%BB%A3%E7%A0%81"><span class="toc-number">3.0.3.</span> <span class="toc-text">3.3 VSCode生成骨架标签代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-1%E6%96%87%E6%A1%A3%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E%E6%A0%87%E7%AD%BE"><span class="toc-number">3.0.3.1.</span> <span class="toc-text">3.3.1文档类型声明标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-2-lang%E8%AF%AD%E8%A8%80%E7%A7%8D%E7%B1%BB"><span class="toc-number">3.0.3.2.</span> <span class="toc-text">3.3.2 lang语言种类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-3-%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="toc-number">3.0.3.3.</span> <span class="toc-text">3.3.3 字符集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-4-%E6%80%BB%E7%BB%93"><span class="toc-number">3.0.3.4.</span> <span class="toc-text">3.3.4 总结</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-HTML%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE"><span class="toc-number">4.</span> <span class="toc-text">4. HTML常用标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E6%A0%87%E7%AD%BE%E8%AF%AD%E4%B9%89"><span class="toc-number">4.0.1.</span> <span class="toc-text">4.1 标签语义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E6%A0%87%E9%A2%98%E6%A0%87%E7%AD%BE%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">4.0.2.</span> <span class="toc-text">4.2 标题标签（重要）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E6%AE%B5%E8%90%BD%E6%A0%87%E7%AD%BE%E5%92%8C%E6%8D%A2%E8%A1%8C%E6%A0%87%E7%AD%BE%EF%BC%88%E9%87%8D%E8%A6%81%EF%BC%89"><span class="toc-number">4.0.3.</span> <span class="toc-text">4.3 段落标签和换行标签（重要）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%96%87%E6%9C%AC%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%A0%87%E7%AD%BE"><span class="toc-number">4.0.4.</span> <span class="toc-text">4.4 文本格式化标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-div%E5%92%8Cspan%E6%A0%87%E7%AD%BE"><span class="toc-number">4.0.5.</span> <span class="toc-text">4.5 div和span标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-%E5%9B%BE%E5%83%8F%E6%A0%87%E7%AD%BE%E5%92%8C%E8%B7%AF%E5%BE%84%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">4.0.6.</span> <span class="toc-text">4.6 图像标签和路径（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-1-%E5%9B%BE%E5%83%8F%E6%A0%87%E7%AD%BE"><span class="toc-number">4.0.6.1.</span> <span class="toc-text">4.6.1 图像标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-2%E8%B7%AF%E5%BE%84%EF%BC%88%E5%89%8D%E6%9C%9F%E9%93%BA%E5%9E%AB%E7%9F%A5%E8%AF%86%EF%BC%89"><span class="toc-number">4.0.6.2.</span> <span class="toc-text">4.6.2路径（前期铺垫知识）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-3%E8%B7%AF%E5%BE%84"><span class="toc-number">4.0.6.3.</span> <span class="toc-text">4.6.3路径</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-7%E8%B6%85%E9%93%BE%E6%8E%A5%E8%A1%A8%E6%A0%87%E7%AD%BE%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="toc-number">4.0.7.</span> <span class="toc-text">4.7超链接表标签（重点）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-1-%E9%93%BE%E6%8E%A5%E7%9A%84%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-number">4.0.7.1.</span> <span class="toc-text">4.7.1 链接的语法格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-2%E9%93%BE%E6%8E%A5%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">4.0.7.2.</span> <span class="toc-text">4.7.2链接的分类</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-HTML%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E5%92%8C%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">5.</span> <span class="toc-text">5.HTML中的注释和特殊字符</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E6%B3%A8%E9%87%8A%E6%A0%87%E7%AD%BE"><span class="toc-number">5.0.1.</span> <span class="toc-text">5.1 注释标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="toc-number">5.0.2.</span> <span class="toc-text">5.2 特殊字符</span></a></li></ol></li></ol></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><text>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></text><text> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></text><wbr><text>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></text></footer></aside></div><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script></main></body></html>

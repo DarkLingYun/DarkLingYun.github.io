@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="zh"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>瞎学的Node.js | Hexo</title><script>var config = </script><script class="pjax-js">code.findCode();</script><script>window.onload = ()=>{var pjax = new Pjax({selectors:['title','article','#aside-block','.pjax-js']});};</script><link rel="stylesheet" href="/css/arknights.css"><link rel="stylesheet" href="//unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-dark-reasonable.min.css"><style>@font-face {
+ font-family: BenderLight;
+ src: local('Bender'), url("/font/BenderLight.ttf");
+}
+@font-face {
+ font-family: 'JetBrains Mono';
+ src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
+}</style><meta name="generator" content="Hexo 6.0.0"></head><body style="background-image:url(https://ak.hypergryph.com/assets/index/images/ak/pc/bk.jpg);"><div id="cursor-container"><div id="cursor-outer"></div><div id="cursor-effect"></div></div><header><nav><a href="/">Home</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><h1>瞎学的Node.js</h1><div id="post-info"><span>First Post:<div style="display:inline-block;width:90px"><time datetime="2021-09-19T15:33:14.000Z" id="date"> 2021-09-19</time></div></span><br><span>Last Update:<div style="display:inline-block;width:90px"><time datetime="2021-09-19T15:33:44.010Z" id="updated"> 2021-09-19</time></div></span></div></div><hr><div id="post-content"><span id="more"></span>
+
+<h1 id="一、Node-js应用的组成"><a href="#一、Node-js应用的组成" class="headerlink" title="一、Node.js应用的组成"></a>一、Node.js应用的组成</h1><ol>
+<li>required模块：用于载入Node.js模块</li>
+<li>创建服务器：监听网页客户端的请求</li>
+<li>接收请求与响应请求：服务器接收请求后返回响应数据</li>
+</ol>
+<h1 id="二、创建第一个Node-js应用"><a href="#二、创建第一个Node-js应用" class="headerlink" title="二、创建第一个Node.js应用"></a>二、创建第一个Node.js应用</h1><h2 id="1-引入required模块"><a href="#1-引入required模块" class="headerlink" title="1. 引入required模块"></a>1. 引入required模块</h2><p>使用require指令来载入http模块，并将实例化的HTTP复制给变量http，如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&quot;http&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-创建服务器"><a href="#2-创建服务器" class="headerlink" title="2. 创建服务器"></a>2. 创建服务器</h2><p>http.createServer() 方法创建服务器，并使用 listen 方法绑定 8888 端口。 函数通过 request, response 参数来接收和响应数据。</p>
+<p>实例如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>);</span><br><span class="line">http.<span class="title function_">createServer</span>(<span class="keyword">function</span> (<span class="params">request, response</span>) &#123;</span><br><span class="line">    <span class="comment">// 发送 HTTP 头部 </span></span><br><span class="line">    <span class="comment">// HTTP 状态值: 200 : OK</span></span><br><span class="line">    <span class="comment">// 内容类型: text/plain</span></span><br><span class="line">    response.<span class="title function_">writeHead</span>(<span class="number">200</span>, &#123;<span class="string">&#x27;Content-Type&#x27;</span>: <span class="string">&#x27;text/plain&#x27;</span>&#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发送响应数据 &quot;Hello World&quot;</span></span><br><span class="line">    response.<span class="title function_">end</span>(<span class="string">&#x27;Hello World\n&#x27;</span>);</span><br><span class="line">&#125;).<span class="title function_">listen</span>(<span class="number">8888</span>);</span><br><span class="line"><span class="comment">// 终端打印如下信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Server running at http://127.0.0.1:8888/&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>使用 <strong>node</strong> 命令执行以上的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node app.<span class="property">js</span></span><br><span class="line"><span class="title class_">Server</span> running at <span class="attr">http</span>:<span class="comment">//127.0.0.1:8888/</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>Node.js服务器的分析</strong></p>
+<ol>
+<li>第一行请求（require）Node.js 自带的 http 模块，并且把它赋值给 http 变量。</li>
+<li>调用 http 模块提供的函数： createServer 。返回 一个对象，对象含有 listen 的方法，这个方法的数值参数用于指定这个 HTTP 服务器监听的端口号。</li>
+</ol>
+<h1 id="三、NPM使用介绍"><a href="#三、NPM使用介绍" class="headerlink" title="三、NPM使用介绍"></a>三、NPM使用介绍</h1><p>NPM是node.js的包管理工具，可以解决一些代码部署问题比如以下几种：</p>
+<ul>
+<li>从NPM服务器下载别人编写的第三方包到本地使用。</li>
+<li>从NPM服务器下载并安装别人编写的命令行程序到本地使用。</li>
+<li>将自己编写的包或命令行程序上传到NPM服务器供别人使用。</li>
+</ul>
+<p>npm的升级：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install npm -g</span><br></pre></td></tr></table></figure>
+
+<p>使用淘宝镜像的命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-使用npm命令安装模块"><a href="#1-使用npm命令安装模块" class="headerlink" title="1. 使用npm命令安装模块"></a>1. 使用npm命令安装模块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install &lt;Module Name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>例如安装Node.js的web框架模块express:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+
+<p>安装后相关文件在工程目录下的 node_modules 目录中，在代码中只需要通过 <strong>require(‘express’)</strong> 的方式就好，无需指定第三方包路径。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-全局安装与本地安装"><a href="#2-全局安装与本地安装" class="headerlink" title="2. 全局安装与本地安装"></a>2. 全局安装与本地安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install express		<span class="comment"># 本地安装</span></span><br><span class="line">npm install express -g 	<span class="comment"># 全局安装</span></span><br></pre></td></tr></table></figure>
+
+<p>如果出现以下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm err! Error: connect ECONNREFUSED 127.0.0.1:8087</span><br></pre></td></tr></table></figure>
+
+<p>解决为:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> proxy null</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-本地安装"><a href="#2-1-本地安装" class="headerlink" title="2.1. 本地安装"></a>2.1. 本地安装</h3><ol>
+<li>将安装包放在 .&#x2F;node_modules 下（运行 npm 命令时所在的目录），如果没有 node_modules 目录，会在当前执行 npm 命令的目录下生成 node_modules 目录。</li>
+<li>可以通过 require() 来引入本地安装的包。</li>
+</ol>
+<h3 id="2-2-全局安装"><a href="#2-2-全局安装" class="headerlink" title="2.2 全局安装"></a>2.2 全局安装</h3><ol>
+<li>将安装包放在 &#x2F;usr&#x2F;local 下或者你 node 的安装目录。</li>
+<li>可以直接在命令行里使用。</li>
+</ol>
+<p>如果希望具备两者功能，则需要在两个地方安装它或使用 <strong>npm link</strong>。</p>
+<h3 id="2-3-查看安装信息"><a href="#2-3-查看安装信息" class="headerlink" title="2.3 查看安装信息"></a>2.3 查看安装信息</h3><p>以下命令用于查看所有全局安装的模块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list -g</span><br></pre></td></tr></table></figure>
+
+<p>查看某个模块版本号</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list grunt</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-使用-package-json"><a href="#3-使用-package-json" class="headerlink" title="3. 使用 package.json"></a>3. 使用 package.json</h2><div id="paginator"></div></div><div id="post-footer"><div id="pages"><div id="footer-link" style="right: calc(50% - 1px);order: 1;border-right: 1px solid #fe2;padding-left: unset;max-width: calc(50% - 4px);"><a href="/2022/02/08/hello-world/">← Next Hello World</a></div><div id="footer-link" style="left: 50%;order: 0;border-left: 1px solid #fe2;padding-right: unset;max-width: calc(50% - 5px);"><a href="/2021/03/11/MySQL%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">MySQL数据库基础命令 Prev →</a></div></div></div><details id="reward"><summary>打赏</summary><div id="alipay"><span>支付宝 | Alipay</span><br><img src="/img/Alipay.png"></div><div id="wechat"><span>微信 | WeChat</span><br><img src="/img/WeChat.png"></div></details></div><div id="bottom-btn"><a id="to-top" onClick="index.scrolltop();" title="to top">∧</a></div></article><div class="aside-box"><aside><div id="aside-top"><div id="about"><a href="/" id="logo"><img src="https://ak.hypergryph.com/assets/index/images/ak/pc/faction/1.png" alt="Logo"></a><h1 id="Dr"><a href="/">John Doe</a></h1><div id="description"><p></p></div></div><div id="aside-block"><h1>INDEX</h1><div id="toc-div"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81Node-js%E5%BA%94%E7%94%A8%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text">一、Node.js应用的组成</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E7%AC%AC%E4%B8%80%E4%B8%AANode-js%E5%BA%94%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">二、创建第一个Node.js应用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%95%E5%85%A5required%E6%A8%A1%E5%9D%97"><span class="toc-number">2.1.</span> <span class="toc-text">1. 引入required模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%88%9B%E5%BB%BA%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">2. 创建服务器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81NPM%E4%BD%BF%E7%94%A8%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">三、NPM使用介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E4%BD%BF%E7%94%A8npm%E5%91%BD%E4%BB%A4%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97"><span class="toc-number">3.1.</span> <span class="toc-text">1. 使用npm命令安装模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85%E4%B8%8E%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.</span> <span class="toc-text">2. 全局安装与本地安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.1. 本地安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2 全局安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85%E4%BF%A1%E6%81%AF"><span class="toc-number">3.2.3.</span> <span class="toc-text">2.3 查看安装信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8-package-json"><span class="toc-number">3.3.</span> <span class="toc-text">3. 使用 package.json</span></a></li></ol></li></ol></div></div></div><footer><nobr><span class="text-title">©</span><span class="text-content">1970 to 2020</span></nobr><br><nobr><span class="text-title">ICP</span><span class="text-content">——备案号——</span></nobr><br><text>published with <a target="_blank" rel="noopener" href="http://hexo.io">Hexo</a></text><text> Theme <a target="_blank" rel="noopener" href="https://github.com/Yue-plus/hexo-theme-arknights">Arknight</a></text><wbr><text>by <a target="_blank" rel="noopener" href="https://github.com/Yue-plus">Yue_plus</a></text></footer></aside></div><canvas id="canvas-dust"></canvas><script src="/js/arknights.js"></script><script src="//unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script><script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script></main></body></html>
